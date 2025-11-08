@@ -2,12 +2,12 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const products = [
-  { title: "A Verdadeira Páscoa", emoji: "🐑" },
-  { title: "Arca de Noé", emoji: "🚢" },
-  { title: "Criação do Mundo", emoji: "🌍" },
-  { title: "Davi e Golias", emoji: "⚔️" },
-  { title: "Jonas e a Baleia", emoji: "🐋" },
-  { title: "Daniel na Cova dos Leões", emoji: "🦁" }
+  { title: "A Verdadeira Páscoa", image: "https://i.ibb.co/bg0hztgj/davi.png" },
+  { title: "Arca de Noé", image: "https://i.ibb.co/ym51Xw95/mae-de-jesus.png" },
+  { title: "Criação do Mundo", image: "https://i.ibb.co/TD3yn01B/cria-odoceu.png" },
+  { title: "Davi e Golias", image: "https://i.ibb.co/bg0hztgj/davi.png" },
+  { title: "Jonas e a Baleia", image: "https://i.ibb.co/67Chs5zr/arcar.png" },
+  { title: "Daniel na Cova dos Leões", image: "https://i.ibb.co/HTY10MZg/pascoa.png" }
 ];
 
 export default function ProductGallery() {
@@ -33,9 +33,15 @@ export default function ProductGallery() {
               className="hover-elevate overflow-hidden"
               data-testid={`card-product-${index}`}
             >
-              <div className="aspect-square bg-gradient-to-br from-accent/20 to-primary/20 flex flex-col items-center justify-center p-4">
-                <div className="text-6xl mb-2">{product.emoji}</div>
-                <div className="text-xs md:text-sm font-semibold text-center text-card-foreground">
+              <div className="aspect-square bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center p-2">
+                <img 
+                  src={product.image} 
+                  alt={product.title}
+                  className="w-full h-full object-cover rounded-md"
+                />
+              </div>
+              <div className="p-2 text-center bg-card">
+                <div className="text-xs md:text-sm font-semibold text-card-foreground">
                   {product.title}
                 </div>
               </div>
