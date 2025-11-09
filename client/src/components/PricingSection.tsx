@@ -4,17 +4,12 @@ import { Badge } from "@/components/ui/badge";
 import { Check, Gift, Star, Crown } from "lucide-react";
 
 export default function PricingSection() {
-  const handleCheckout = (packageName: string) => {
-    console.log(`Checkout iniciado para: ${packageName}`);
-    alert(`Redirecionando para pagamento do ${packageName}`);
-  };
-
   return (
     <section id="pricing-section" className="py-16 md:py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-4">
           <Badge className="bg-destructive text-destructive-foreground mb-4 px-4 py-2">
-            OFERTA LIMITADA - Apenas no dia 08/11/25
+            OFERTA LIMITADA - Apenas no dia 10/11/25
           </Badge>
         </div>
         
@@ -66,11 +61,13 @@ export default function PricingSection() {
             
             <CardFooter>
               <Button 
+                asChild
                 className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 py-6 text-lg font-bold"
-                onClick={() => handleCheckout('Pacote Básico')}
                 data-testid="button-checkout-basic"
               >
-                QUERO O PACOTE BÁSICO
+                <a href="https://payments.clickmax.io/0qo8izQFz_" target="_blank" rel="noopener noreferrer">
+                  QUERO O PACOTE BÁSICO
+                </a>
               </Button>
             </CardFooter>
           </Card>
@@ -138,11 +135,13 @@ export default function PricingSection() {
             
             <CardFooter className="flex-col gap-3">
               <Button 
+                asChild
                 className="w-full bg-accent text-accent-foreground hover:bg-accent/90 py-6 text-lg font-bold"
-                onClick={() => handleCheckout('Pacote Premium')}
                 data-testid="button-checkout-premium"
               >
-                QUERO O PACOTE PREMIUM
+                <a href="https://payments.clickmax.io/bSevQYwJga" target="_blank" rel="noopener noreferrer">
+                  QUERO O PACOTE PREMIUM
+                </a>
               </Button>
               <p className="text-xs text-muted-foreground text-center">
                 +500 pessoas já escolheram este pacote
